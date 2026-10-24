@@ -9,8 +9,12 @@ demo = gr.Interface(
     inputs = [gr.Textbox(label="Name: "),
         gr.Slider(label="Age: "),
         gr.Radio(label="Subject Preference: ", choices=["C","C#","Java","Python"]),
-        gr.Checkboxgroup(label='Hobbies:', choices=["Singing","Painting","Dancing","Sketching"])
+        gr.Checkboxgroup(label='Hobbies:', choices=["Singing","Painting","Dancing","Sketching"]),
+        gr.Image(label="Upload your Image",type="pil")
     ],
-    outputs=[gr.Textbox()]
+    outputs=[
+        gr.Image(label="Profile Picture"),
+        gr.Textbox(label="Person profile")
+    ],
 )
 demo.launch()
